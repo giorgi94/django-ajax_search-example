@@ -1,0 +1,18 @@
+{% if posters %}
+<ul>
+	{% for poster in posters %}
+	<li>
+		<table style="width: 100%;border-bottom: 1px solid #ccc;margin-bottom: 5px;">
+		<tr>
+			<td style="width: 75px;">
+				<a href="{% url 'poster:detail' poster.id %}"><img class="profile" style="width: 70px; height: auto;border-radius: 7px;   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2); cursor: auto;" src="{{ poster.image }}"></a>
+			</td>
+			<td style="width: 100%; vertical-align: top; padding-left: 5px;">
+				<a class="p-tag" href="{% url 'poster:detail' poster.id %}">{{ poster.title }}</a>
+			</td>
+		</tr>
+		</table>
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}

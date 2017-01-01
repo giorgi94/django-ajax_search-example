@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %} Posters {% endblock title %}
+{% block content %}
+
+
+{% if all_poster %}
+
+<table align="center">
+<tr>
+<td>
+	<ul class="poster_list" style="zoom: 1.00;">	
+	{% for poster in poster_list %}
+		<li>
+			<a href="{% url 'poster:detail' poster.id %}"><img class="profile" 
+			style="height: 180px; width: 130px;border-radius: 7px;   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2); cursor: auto;" 
+			title="{{ poster.title }}" src="{{ poster.image }}"></a>
+		</li>
+	{% endfor %}
+
+
+		
+	</ul>
+
+	<center>
+	<div class="pagination">
+		<span class="step-links">
+			{% if poster_list.has_previous %}
+				<a href="?page={{ poster_list.previous_page_number }}&q={{ request.GET.q }}">previous</a>
+			{% endif %}
+
+			<span class="current">
+				Page {{ poster_list.number }} of {{ poster_list.paginator.num_pages }}.
+			</span>
+
+			{% if poster_list.has_next %}
+				<a href="?page={{ poster_list.next_page_number }}&q={{ request.GET.q }}">next</a>
+			{% endif %}
+		</span>
+	</div>
+	</center>
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+{% else %}
+	<h5>There is no poster!</h5>
+{% endif %}
+
+
+
+{% endblock content %}
+
+
+{% block style %}
+<style type="text/css">
+	.poster_list {
+		list-style: none;		
+		display: inline-block;
+	}
+	.poster_list li {
+		float: right;
+		padding: 0;
+		margin: 10px;
+
+	}
+</style>
+{% endblock style %}

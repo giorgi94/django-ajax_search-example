@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Edit Video {% endblock title %}
+{% block content %}
+
+
+<h3 style="padding-left: 5px;margin-bottom: 20px">Edit Video:</h3>
+
+
+<div style="padding-left: 5px; padding-right: 5px;">
+<form action='.' method="POST">
+	{% csrf_token %}
+	<table style="width: 100%; padding-right: 50px;" align="center" cellpadding="5">
+		<tr>
+			<td style="vertical-align: top;height: 300px; width: 210px;" >
+				<img id="poster" style="height: 300px; width: 210px;cursor: default;" src="{{poster.image}}"">
+			</td>
+			<td style="vertical-align: top; width: 100%;">
+				<div>{{form.title}}</div>
+				<div>{{form.image}}</div>
+				<div>{{form.year}}</div>
+				<div>{{form.genre}}</div>
+				<div style="vertical-align: middle;">
+					<button type="submit" class="btn-link">Save</button>	
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+</form>
+</div>
+
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script type="text/javascript">
+	$('#id_image').on('keyup', function() {
+		$('#poster').attr('src', $('#id_image').val());
+	});
+</script>
+{% endblock script %}

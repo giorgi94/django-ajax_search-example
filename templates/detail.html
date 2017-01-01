@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Video {% endblock title %}
+{% block content %}
+
+
+<table align="center"><tr><td>
+
+<div class="info">
+	<table cellspacing="0" cellpadding="0">			
+		<tr>
+			<td class="info-left">
+				<img src="{{ poster.image }}">
+			</td>
+			<td style="vertical-align: top; width: 100%;">
+				<table class="table-info" cellpadding="10" cellspacing="0">
+					<tr>
+					<td style="vertical-align: top;">
+						<table>										
+							<tr style="vertical-align: top;">
+								<td style="width: 120px;"><div class="p-tag" style="color: #222">Title:</div></td>
+								<td><div class="p-tag">{{ poster.title }}</div></td>
+							</tr>
+							<tr style="vertical-align: top;">
+								<td><div class="p-tag" style="color: #222">Year:</div></td>
+								<td><div class="p-tag" >{{ poster.year }}</div></td>
+							</tr>
+							<tr style="vertical-align: top;">
+								<td><div class="p-tag" style="color: #222">Genre:</div></td>
+								<td><div class="p-tag" >{{ poster.genre }}</div></td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+					<tr style="vertical-align: bottom;" align="right">
+						<td>
+							<a href="./edit/" class="btn-link">Edit</a>
+						</td>								
+					</tr>
+				</table>							
+			</td>
+		</tr>					
+	</table>	
+</div>
+</td></tr></table>
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+.search-list {
+	position:absolute; 
+	top: 47px;
+	right: 12px; 
+	z-index: 1;
+}
+.search-list > div > ul {
+	list-style: none;
+	width: 250px;
+	padding: .5rem .75rem;
+	font-size: 10pt;		
+	color: #55595c;
+	background-color: #fff;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: .25rem;
+	font-family: "Segoe UI";
+}
