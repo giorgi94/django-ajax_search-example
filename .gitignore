@@ -2,7 +2,15 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+manage.py
+ajaxsearch/wsgi.py
+ajaxsearch/settings.py
+
+*.sqlite3
 *.sublime-project
+*.sublime-workspace
+
 
 # C extensions
 *.so
